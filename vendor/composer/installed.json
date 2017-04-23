@@ -42,7 +42,7 @@
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/ins0/google-measurement-php-client/zipball/2b3aef2375837339f5b2bfe88e76994481f86264",
+            "url": "https://api.github.com/repos/ins0/google-measurement-php-client/zipball/415cabca0c6d83cd0bd6a8ed6fb695b35f892018",
             "reference": "2b3aef2375837339f5b2bfe88e76994481f86264",
             "shasum": ""
         },
@@ -306,6 +306,57 @@
             "dotenv",
             "env",
             "environment"
+        ]
+    },
+    {
+        "name": "whatsapp/chat-api",
+        "version": "v3.2.0.1",
+        "version_normalized": "3.2.0.1",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mgp25/Chat-API.git",
+            "reference": "c72cad156c9d9ce7953439c089474a7a7320906d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/mgp25/Chat-API/zipball/c72cad156c9d9ce7953439c089474a7a7320906d",
+            "reference": "c72cad156c9d9ce7953439c089474a7a7320906d",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "ext-gd": "*",
+            "ext-mcrypt": "*",
+            "ext-openssl": "*",
+            "ext-pdo": "*",
+            "ext-sockets": "*",
+            "ext-sqlite3": "*",
+            "php": ">=5.6"
+        },
+        "time": "2016-07-02 12:03:26",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0+"
+        ],
+        "authors": [
+            {
+                "name": "Chat API Contributing Team",
+                "homepage": "https://github.com/mgp25/Chat-API/graphs/contributors",
+                "role": "Contributors"
+            }
+        ],
+        "description": "The PHP WhatsApp library",
+        "keywords": [
+            "Chat-API",
+            "whatsapi",
+            "whatsapp"
         ]
     }
 ]
