@@ -529,7 +529,20 @@ class Sale extends CI_Model
 			'dinner_table_id'=> $dinner_table,
 			'sale_status'	 => $sale_status
 		);
+	$url = 'http://bgscoffee.com/CoffeOrders/ifbdata.php';
 
+
+        // use key 'http' even if you send the request to https://...
+        $options = array(
+          'http' => array(
+        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+        'method'  => 'POST',
+        'content' => http_build_query($sales_data)
+          )
+        )       ;
+        $context  = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+            if ($result === FALSE) { /* Handle error */ }
 		// Run these queries as a transaction, we want to make sure we do all or nothing
 		$this->db->trans_start();
 
@@ -589,7 +602,7 @@ class Sale extends CI_Model
 		foreach($items as $line=>$item)
 		{
 			$cur_item_info = $this->Item->get_info($item['item_id']);
-
+			
 			$sales_items_data = array(
 				'sale_id'			=> $sale_id,
 				'item_id'			=> $item['item_id'],
@@ -603,7 +616,20 @@ class Sale extends CI_Model
 				'item_location'		=> $item['item_location'],
 				'print_option'		=> $item['print_option']
 			);
+			$url = 'http://bgscoffee.com//CoffeOrders/ifbdata.php';
 
+
+            // use key 'http' even if you send the request to https://...
+            $options = array(
+                'http' => array(
+                    'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                    'method'  => 'POST',
+                    'content' => http_build_query($sales_items_data)
+                )
+            )       ;
+            $context  = stream_context_create($options);
+            $result = file_get_contents($url, false, $context);
+            if ($result === FALSE) { /* Handle error */ }
 			$this->db->insert('sales_items', $sales_items_data);
 
 			if($cur_item_info->stock_type === '0')
